@@ -1,4 +1,4 @@
-package com.example.puzzlegame;
+package com.puzzle.house;
 
 import org.junit.Test;
 
