@@ -16,8 +16,12 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.RequestConfiguration;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -34,21 +38,20 @@ public class MainActivity extends AppCompatActivity {
         resize();
         getWidth();
         init();
+        showAd();
+        mode = 1;
+        rendom();
+        clicklistener();
+    }
+
+    private void showAd() {
         AdView adView = new AdView(this);
         adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId(String.valueOf(R.string.test_unit_id));
-       /* MobileAds.initialize(this, new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(InitializationStatus initializationStatus) {
-            }
-        });*/
+        adView.setAdUnitId(String.valueOf(R.string.unit_id));
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
         setAdListener();
-        mode = 1;
-        rendom();
-        clicklistener();
     }
 
     private void setAdListener() {

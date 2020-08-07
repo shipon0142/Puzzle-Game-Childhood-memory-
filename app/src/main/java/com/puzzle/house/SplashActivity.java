@@ -28,8 +28,9 @@ public class SplashActivity extends AppCompatActivity {
                 finally
                 {
                     //Goes to Activity  StartingPoint.java(STARTINGPOINT)
-                    Intent openstartingpoint=new Intent(SplashActivity.this,MainActivity.class);
+                    Intent openstartingpoint=new Intent(SplashActivity.this,FirstActivity.class);
                     startActivity(openstartingpoint);
+                    finish();
                 }
             }
         };
